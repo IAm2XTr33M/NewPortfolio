@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #f0f0f0;
+    }
+
+    .box {
+      position: absolute;
+      overflow: hidden;
+      width: 300px; /* Adjust the width of the box */
+      height: 200px; /* Adjust the height of the box */
+      border: 2px solid #333;
+    }
+
+    .scrolling-text {
+      white-space: nowrap;
+      font-size: 20px;
+      color: #333;
+      animation: scrollText linear infinite;
+    }
+
+    @keyframes scrollText {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="scrolling-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <!-- Add more sentences as needed -->
+    </div>
+  </div>
+
+  <script>
+    const box = document.querySelector('.box');
+    const scrollingText = document.querySelector('.scrolling-text');
+
+    // Adjust the line spacing, repeat count, and speed
+    scrollingText.style.setProperty('--line-spacing', '30px');
+    scrollingText.style.setProperty('--repeat-count', '2');
+    scrollingText.style.setProperty('--speed', '20s');
+
+    // Calculate the total height based on line spacing and repeat count
+    const totalHeight = (parseInt(scrollingText.style.getPropertyValue('--line-spacing')) +
+                        scrollingText.scrollHeight) *
+                       parseInt(scrollingText.style.getPropertyValue('--repeat-count'));
+
+    // Set the height of the box
+    box.style.height = `${totalHeight}px`;
+  </script>
+</body>
+</html>
