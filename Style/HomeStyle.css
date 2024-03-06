@@ -6,7 +6,7 @@
 }
 
 :root{
-    --Background1 : black;
+    --Background1 : rgba(0, 0, 0, 0.671);
     --Background2 : rgb(29, 29, 29);
     --Background3 : rgb(88, 88, 88);
 }
@@ -29,11 +29,10 @@ body{
     height: 100vh;
 }
 
-body:hover{
-    cursor: pointer;
-}
-body:active{
-    cursor:grab;
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -62,15 +61,87 @@ h2{
     top: 48vh;
     padding: 2vw;
 }
-h3{
+
+#mainDiv{
+    position: fixed;
+    
+    width: 70vw;
+    height: 30vh;
+    z-index: 10000;
+}
+
+#mainDiv:hover{
+    cursor:pointer;
+}
+
+#mainDiv h3{
     position: fixed;
     font-family: monsterrat;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.781);
+    text-shadow: 0.1vw 0.1vw 0.1vw rgba(255, 255, 255, 0.541),
+    1vw 1vw 0.1vw rgba(0, 0, 0, 0.644);
 
-    font-size: 2vw;
-    top: 57vh;
+    font-size: 9vw;
     padding: 2vw;
+
+    transition: 400ms ease-out;
 }
+
+#mainDiv:hover h3{
+    color: rgba(255, 255, 255, 0.89);
+    text-shadow: 0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.541),
+    1vw 1vw 0.1vw rgba(0, 0, 0, 0.562),
+    0vw 0vw 0.3vw rgba(0, 0, 0, 0.342);
+    transition: 100ms ease-out;
+}
+
+#mainDiv:active h3{
+    margin-top: 1vw;
+    color: rgba(255, 255, 255, 1);
+}
+
+#textBackground{
+    position: fixed;
+
+    width: 60vw;
+    height: 3vw;
+    margin-top: 6vw;
+    background-color: rgba(0, 0, 0, 0.24);
+    box-shadow: 0.1vw 0.1vw 0.1vw 0 rgba(255, 255, 255, 0.541);
+
+    transition: 400ms ease-out;
+}
+
+#mainDiv:hover #textBackground{
+    height:12vw;
+    width: 70vw;
+    margin-top: 1vw;
+    
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.178) 50%, rgba(255, 255, 255, 0) 50%);
+
+    box-shadow: 0vw 1vw 1vw 0 rgba(0, 0, 0, 0.678),
+    inset 0 0 1vw 0.1vw rgba(0, 0, 0, 0.363);
+    
+    border-radius: 2px;
+    transition: 100ms ease-out;
+}
+
+.dot{
+    position: fixed;
+    width: 1vw;
+    height: 1vw;
+    border-radius: 100%;
+    background-color: white;
+    box-shadow: 0vw 0vw 3vw 0.7vw rgba(255, 255, 255, 0.685),
+    0vw 0vw 1vw 0px rgba(255, 255, 255, 0.685),
+    inset 0vw 0vw 0.5vw 0 rgba(0, 0, 0, 0.603);
+}
+
+
+
+
+
 
 #background {
     z-index: -100;
