@@ -99,6 +99,11 @@ h3{
     border-radius: 2px;
 }
 
+button{
+    position: fixed;
+}
+
+
 @keyframes BackgroundAnim {
     0% {rotate: 0deg;
     }
@@ -114,9 +119,9 @@ h3{
 
 @font-face {
     font-family: monsterrat-extra-bold;
-    src: url(Fonts/Montserrat-ExtraBold.otf);
+    src: url(/Fonts/Montserrat-ExtraBold.otf);
 }
 @font-face {
     font-family: monsterrat;
-    src: url(Fonts/Montserrat-Bold.otf);
+    src: url(/Fonts/Montserrat-Bold.otf);
 }

@@ -161,21 +161,21 @@ body{
 
 @font-face {
     font-family: monsterrat;
-    src: url(Fonts/Montserrat-Medium.otf);
+    src: url(/Fonts/Montserrat-Medium.otf);
 }
 @font-face {
     font-family: monsterrat-bold;
-    src: url(Fonts/Montserrat-Bold.otf);
+    src: url(/Fonts/Montserrat-Bold.otf);
 }
 @font-face {
     font-family: monsterrat-extra-bold;
-    src: url(Fonts/Montserrat-ExtraBold.otf);
+    src: url(/Fonts/Montserrat-ExtraBold.otf);
 }
 @font-face {
     font-family: monsterrat-light;
-    src: url(Fonts/Montserrat-Light.otf);
+    src: url(/Fonts/Montserrat-Light.otf);
 }
 @font-face {
     font-family: monsterrat-thin;
-    src: url(Fonts/Montserrat-Thin.otf);
+    src: url(/Fonts/Montserrat-Thin.otf);
 }

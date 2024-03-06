@@ -1,0 +1,57 @@
+:root{
+    --TextScrollWidth: calc(100vw - 7vw);
+    --TextScrollHeight: calc(100vh - 7vw);
+    --Speed: 40s;
+}
+
+#textScroll{
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+#textScroll p{
+    animation: moveText var(--Speed) linear infinite  ,
+    rotateText var(--Speed) step-end infinite;   
+    text-align: centers;
+    z-index: 1000;
+    position: absolute;
+    font-size: 2vw;
+    font-family: monsterrat;
+    text-shadow: 0px 0px 0.5vw rgba(255, 255, 255, 0.571);
+}
+
+@font-face {
+    font-family: monsterrat-extra-bold;
+    src: url(/Fonts/Montserrat-ExtraBold.otf);
+}
+
+@font-face {
+    font-family: monsterrat;
+    src: url(/Fonts/Montserrat-Bold.otf);
+}
+
+/* <style>
+@keyframes moveText {
+    0%{
+        margin: 0 var(--TextScrollWidth) var(--TextScrollHeight) 0;
+    }
+    25%{
+        margin: 0 0 var(--TextScrollHeight) var(--TextScrollWidth);
+    }
+    50%{
+        margin: var(--TextScrollHeight) 0 0 var(--TextScrollWidth);
+    }
+    75%{
+        margin: var(--TextScrollHeight) var(--TextScrollWidth) 0 0;
+    }
+    100%{
+        margin: 0 var(--TextScrollWidth) var(--TextScrollHeight) 0;
+    }
+}
+</style> */
