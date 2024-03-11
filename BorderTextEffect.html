@@ -22,17 +22,17 @@
      -->
 
     <script>
-        var sentence = "this is a test";
-        var repeat = 9;
-        var letterSpacing = 179;
-        var sentenceSpacing = 11;
+        let sentence = "this is a test";
+        let repeat = 9;
+        let letterSpacing = 179;
+        let sentenceSpacing = 11;
 
         document.addEventListener('DOMContentLoaded', function () {
-            var splitSentence = sentence.split("");
+            let splitSentence = sentence.split("");
             const originalLetter = document.getElementById('textLetter');
 
-            var d = 0;
-            for(var i = 0; i < repeat; i++){
+            let d = 0;
+            for(let i = 0; i < repeat; i++){
                 splitSentence.forEach(letter => {
                     var clonedLetter = originalLetter.cloneNode(true);
                     clonedLetter.innerHTML = letter;
@@ -46,7 +46,7 @@
 
         });
 
-        var style;
+        let style;
         function setKeyframes() {
             if(style == null)
             {
@@ -54,7 +54,7 @@
                 style.type = 'text/css';
             }
 
-            var keyframes = `
+            let keyframes = `
                 @keyframes moveText {
                     0%{
                         margin: 0 var(--TextScrollWidth) var(--TextScrollHeight) 0;
@@ -91,7 +91,7 @@
                 }
             `;
 
-            var speed = 100/(window.innerWidth + window.innerHeight) * window.innerHeight;
+            let speed = 100/(window.innerWidth + window.innerHeight) * window.innerHeight;
             speed = Math.round(speed);
 
             keyframes = keyframes.replace("VALUE_1", 50 - speed/2);

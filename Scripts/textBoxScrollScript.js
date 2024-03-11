@@ -1,14 +1,14 @@
-var sentence = "Kyan mensen portfolio";
-var repeat = 8;
-var letterSpacing = 200;
-var sentenceSpacing = 4;
+const sentence = "Kyan mensen portfolio";
+const repeat = 8;
+const letterSpacing = 200;
+const sentenceSpacing = 4;
 
 document.addEventListener('DOMContentLoaded', function () {
-    var splitSentence = sentence.split("");
+    const splitSentence = sentence.split("");
     const originalLetter = document.getElementById('textLetter');
 
-    var d = 0;
-    for(var i = 0; i < repeat; i++){
+    let d = 0;
+    for(let i = 0; i < repeat; i++){
         splitSentence.forEach(letter => {
             var clonedLetter = originalLetter.cloneNode(true);
             clonedLetter.innerHTML = letter;
@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         d += sentenceSpacing;
     }
-
+    
 });
 
-var style;
+let style;
 function setKeyframes() {
     if(style == null)
     {
@@ -30,7 +30,7 @@ function setKeyframes() {
         style.type = 'text/css';
     }
 
-    var keyframes = `
+    let keyframes = `
         @keyframes moveText {
             0%{
                 margin: 0 var(--TextScrollWidth) var(--TextScrollHeight) 0;
@@ -67,7 +67,7 @@ function setKeyframes() {
         }
     `;
 
-    var speed = 100/(window.innerWidth + window.innerHeight) * window.innerHeight;
+    let speed = 100/(window.innerWidth + window.innerHeight) * window.innerHeight;
     speed = Math.round(speed);
     
 
