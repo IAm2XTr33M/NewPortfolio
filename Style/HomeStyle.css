@@ -7,7 +7,7 @@
 
 :root{
     --Background1 : rgba(0, 0, 0, 0.671);
-    --Background2 : rgb(84, 84, 84);
+    --Background2 : rgb(50, 50, 50);
     --Background3 : rgb(88, 88, 88);
 }
 
@@ -68,6 +68,7 @@ h2{
     width: 70vw;
     height: 50vh;
     z-index: 10000;
+
 }
 
 #mainDiv:hover{
@@ -125,7 +126,7 @@ h2{
 #textSideLine{
     margin-left: 65vw;
     margin-top: 1vh;
-    margin-bottom: calc(30vh - 2vw);
+    margin-bottom: 12vw;
     width: 4px;
     height: 0;
 }
@@ -136,7 +137,7 @@ h2{
 }
 #mainDiv:hover #textSideLine{
     margin-bottom: 0;
-    height: calc(30vh - 2vw);
+    height: 12vw;
 }
 
 #mainDiv:active #textBottomLine{
@@ -145,12 +146,21 @@ h2{
     transition: 150ms;
 }
 
-#textBottomLineActive{
-    width: 150vw;
-    height: 150vh;
-    transition: 150ms;
+.mainDivActive #textBottomLine{
+    width: 175vw !important;
+    height: 175vh !important;
+    transition: 150ms !important;
+    background-color: white;
 }
 
+.mainDivActive h3{
+    text-shadow: none !important;
+    transition: 100ms !important;
+}
+
+#mainDiv:hover{
+    scale: 110%;
+}
 
 
 .dot{

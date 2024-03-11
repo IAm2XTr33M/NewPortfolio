@@ -9,5 +9,5 @@ addEventListener("mousemove", (event) => {
 });
 
 function ExtendBottomLine(){
-    document.getElementById("textBottomLine").s
+    document.getElementById("mainDiv").classList.add("mainDivActive");
 }
