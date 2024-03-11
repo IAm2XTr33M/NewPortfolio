@@ -3,46 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kyan Mensen Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="myScript.js"></script>
+    <title>Kyan Mensen portfolio</title>
+    <link rel="stylesheet" href="style/homeStyle.css">
+    <link rel="stylesheet" href="style/textBoxScrollStyle.css">
+    <script src="Scripts/textBoxScrollScript.js"></script>
+    <script src="Scripts/homeScript.js"></script>
 </head>
-<body class="center">
-    <div class="mainContainer">
-        <div id="navbarLine">
+<body>
 
-        </div>
-
-        <div id="name" class="center">
-            <span class="letter">K</span>
-            <span class="letter">y</span>
-            <span class="letter">a</span>
-            <span class="letter">n</span>
-            <span class="">&nbsp;</span>
-            <span class="letter">M</span>
-            <span class="letter">e</span>
-            <span class="letter">n</span>
-            <span class="letter">s</span>
-            <span class="letter">e</span>
-            <span class="letter">n</span>
-        </div>
-
-        <div id="navbar" class="center">
-            <h2>- Home -<div></div></h2>
-            <h2>- About me -<div></div></h2>
-            <h2>- Projects -<div></div></h2>
-            <h2>- Socials -<div></div></h2>
-            <h2>- Contact -<div></div></h2>
-        </div>
-
-        <div id="contentLine">
-            
-        </div>
-
-        <div id="content"></div>
-        <div id="content2"></div>
-
-        <div id="footer"></div>
+    <div id="mainDiv" class="center" onclick="ExtendBottomLine();">
+        <div id="textBottomLine"></div>
+        <div id="textSideLine"></div>
+        <h3>Step Inside !</h3>
     </div>
+    
+
+    <div id="background"></div>
+    <div id="border"></div>
+
+    <div id="textScroll">
+        <p id="textLetter" style="display: none;">T</p>
+    </div>
+
+    <div class="dot" style="margin: calc(100vh - 12vw) calc(100vw - 12vw) 0 0;"></div>
+    <div class="dot" style="margin: calc(100vh - 12vw) 0 0 calc(100vw - 12vw);"></div>
+    <div class="dot" style="margin: 0 0 calc(100vh - 12vw) calc(100vw - 12vw);"></div>
+    <div class="dot" style="margin: 0 calc(100vw - 12vw) calc(100vh - 12vw) 0;"></div>
+
+
+    <!-- <button>Check It Out</button> -->
+
 </body>
 </html>
