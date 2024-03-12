@@ -125,19 +125,33 @@ h2{
     width: 0;
     height: 4px;
 }
-#textSideLine{
+#textRightLine{
     margin-left: 65vw;
     margin-top: 1vh;
     margin-bottom: 12vw;
     width: 4px;
     height: 0;
 }
+#textTopLine{
+    margin-right: 0;
+    width: calc(65vw - 2vw);
+    margin-top: -15vw;
+    height: 4px;
+}
+#textLeftLine{
+    margin-right: 65vw;
+    margin-top: 1vh;
+    margin-bottom: 0;
+    height: 12vw;
+    width: 4px;
+}
+
 
 #mainDiv:hover #textBottomLine{
     margin-right: 0;
     width: calc(65vw - 2vw);
 }
-#mainDiv:hover #textSideLine{
+#mainDiv:hover #textRightLine{
     margin-bottom: 0;
     height: 12vw;
 }
@@ -147,6 +161,12 @@ h2{
     margin-bottom: calc((30vh - 2vw) / 2);
     transition: 150ms;
 }
+
+#mainDiv:active #textTopLine{
+    width: 0;
+    transition: 100ms !important;
+}
+
 
 #mainDiv:hover{
     cursor:pointer;
@@ -168,6 +188,10 @@ h2{
     width: 100vw !important;
     height: 100vh !important;
     background-color: white;
+}
+.mainDivActive #textTopLine{
+    opacity: 0 !important;
+    transition: 0ms;
 }
 
 .mainDivActive h3{
