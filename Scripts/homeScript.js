@@ -1,6 +1,6 @@
 async function ExtendBottomLine(){
-    document.getElementById("mainDiv").classList.add("mainDivActive");
-    await delay(600);
+    document.getElementById("mainDiv").classList.add("mainDivActive"); 
+    await delay(700);
 
     openNewTab("portfolio.html");
 }
