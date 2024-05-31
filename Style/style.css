@@ -8,28 +8,28 @@
     --dark1:black;
     --dark2:black;
     --light1:rgb(255, 255, 255);
-    --light2:rgb(250, 220, 220);
+    --highlight:#ffee6a;
 
     --Background1 : rgba(12, 12, 12, 0.671);
     --Background2 : rgb(31, 31, 31);
     --Background3 : rgb(88, 88, 88);
 
     --InvertedTransitionTime: 3000ms;
+    --ColorTransitionTIme: 50ms;
 }
 
 .inverted{
     --dark1:white;
     --dark2:white;
-    --light1:rgb(0, 0, 0);
-    --light2:rgb(0, 0, 0);
+    --light1:rgb(0, 0, 0);  
+    --highlight:rgb(0, 0, 0);
 
     background-color: var(--dark1);
 }
 
 body{
-    background-color: var(--dark1);
     transition: background-color var(--InvertedTransitionTime);
-    background-color: var(--dark1);
+    background-color: var(--Background3);
     width: 100vw; height: 100vh; overflow: hidden;
 }
 
@@ -95,15 +95,15 @@ body{
 }
 #navbar h2:hover{
     cursor: pointer;
-    color: var(--light2);
+    color: var(--highlight);
     transition: color var(--InvertedTransitionTime);
-    transition: 50ms;
+    transition: var(--ColorTransitionTIme);
 }
 #navbar h2:hover div{
     width: 100%;
-    background-color: var(--light2);
-    transition: background-color var(--InvertedTransitionTime);
-    transition: 200ms;
+    background-color: var(--highlight);
+    transition: color var(--InvertedTransitionTime);
+    transition: var(--ColorTransitionTIme);
 }
 #navbar h2:active{
     color: var(--light1);
@@ -111,6 +111,14 @@ body{
 }
 #navbar h2:active div{
     scale: 80%;
+    background-color: var(--light1);
+    transition: background-color var(--InvertedTransitionTime);
+}
+
+
+
+#navbar .selected div{
+    width: 100%;
     background-color: var(--light1);
     transition: background-color var(--InvertedTransitionTime);
 }
@@ -144,13 +152,49 @@ body{
 #content{
     height: 99%;
     width: 100%;
-    background-color: red;
+    /* background-color: red; */
 }
 
 #content2{
     height: 99%;
     width: 100%;
-    background-color: blue;
+    /* background-color: blue; */
+}
+
+#aboutMeContent2{
+    width: 100%;
+    height: 100%;
+}
+
+#aboutMeImageContainer{
+    width: 100%;
+    height: 73%;
+}
+
+
+#aboutMeContent2 #aboutMeImage{
+    width: 55%;
+    aspect-ratio: 3/4;
+    background-color: rgba(255, 255, 255, 0.145);
+}
+
+#aboutMeContent2 #aboutMeDescription{
+    width: 90%;
+    height: 27%;
+}
+
+#aboutMeContent2 #aboutMeDescription p{
+    font-family: monsterrat;
+    font-size: 1vw;
+    line-height: 130%;
+    text-align: center;
+    color: var(--light1);
+    transition: color var(--InvertedTransitionTime);
+}
+
+#aboutMeContent2 #aboutMeDescription p span{
+    color: var(--highlight);
+    transition: color var(--InvertedTransitionTime);
 }
 
 .contentEndLine{
@@ -161,7 +205,7 @@ body{
     background-color: var(--light1);
     box-shadow: 0px 0px 5px var(--light1);
     transition: background-color var(--InvertedTransitionTime),
-    box-shadow var(--InvertedTransitionTime);
+    box-shadow var(--InvertedTransitionTime),100ms;
 }
 
 
@@ -176,8 +220,10 @@ body{
     position: fixed;
     z-index: -1000;
     width: 100vw;
-    height: 100vw;
+    height: 200vh;
     scale: 200%;
+    left: 25vw;
+    top: -25vh;
 
     background-color: var(--Background2);
 
@@ -192,12 +238,130 @@ body{
 
 
 
+
+
+
+
+#aboutMeContent{
+    width: 100%;
+    height: 100%;
+}
+
+#skillsContainer{
+    width: 90%;
+    height: 76%;
+    padding: 1%;
+    gap: 2%;
+}
+#skillsDescription{
+    width: 90%;
+    height: 24%;
+}
+
+.skillsTitle{
+    width: 100%;
+    height: calc(100% / 6);
+    animation: slideInTop 2s , fade 2s;
+}
+.skillsTitle h2{
+    text-align: center;
+    font-size: 2.5vw;
+    color: var(--highlight);
+}
+
+.skillContainer{
+    width: 100%;
+    height: calc(100% / 6);
+}
+
+.skillContainer .skillLeft{
+    width: 50%;
+    height: 100%;
+    animation: slideInLeft 2s , fade 2s;
+}
+
+.skillLeft h2{
+    width: 100%;
+    text-align: right;
+    font-size: 2vw;
+}
+
+
+.skillContainer .skillRight{
+    width: 50%;
+    height: 100%;
+    padding-left: 3%;
+    display: flex;
+    align-items: center;
+    animation: slideInRight 2s , fade 2s;
+}
+.skillRight h2{
+    font-size: 1.5vw;
+}
+
+h2{
+    font-family: monsterrat;
+    color: var(--light1);
+    transition: color var(--InvertedTransitionTime);
+}
+
+.starP{
+    color: var(--highlight);
+}
+
+.starN{
+    color: #80808090;
+}
+
+#welcomeText{
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+}
+
+#welcomeText h3{
+    font-family: monsterrat;
+    color: black;
+    font-size: 10vw;
+    animation: fade 1.5s , 2s fadeOut 1.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @keyframes fade {
     from{
         opacity: 0;
     }
     to{
         opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
     }
 }
 @keyframes slideInTop {
@@ -246,7 +410,7 @@ body{
         text-shadow: none;
     }
     50%{
-        text-shadow: 4px -4px 3px var(--light2);
+        text-shadow: 4px -4px 3px var(--highlight);
     }
     75%, 100%{
         text-shadow: none;

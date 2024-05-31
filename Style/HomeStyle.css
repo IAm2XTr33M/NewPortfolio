@@ -178,7 +178,7 @@ h2{
 .mainDivActive{
     width: 250vw;
     height: 250vw;
-    scale: 300% !important;
+    scale: 300%;
 }
 .mainDivActive h3{
     margin-top: 5vw;
@@ -188,6 +188,7 @@ h2{
     width: 100vw !important;
     height: 100vh !important;
     background-color: white;
+    transition: 100ms ease-in;
 }
 .mainDivActive #textTopLine{
     opacity: 0 !important;

@@ -13,11 +13,12 @@
     <div id="mainContainer">
 
         <div id="navbar" class="center">
-            <h2>- About me -<div></div></h2>
-            <h2>- Projects -<div></div></h2>
-            <h2>- Socials -<div></div></h2>
-            <h2>- Contact -<div></div></h2>
+            <h2 onclick="selectNavbarElement(1)" id="navAbout" class="selected" >- About me -<div></div></h2>
+            <h2 onclick="selectNavbarElement(2)" id="navProjects" >- Projects -<div></div></h2>
+            <h2 onclick="selectNavbarElement(3)" id="nacSocials" >- Socials -<div></div></h2>
+            <h2 onclick="selectNavbarElement(4)" id="navContact" >- Contact -<div></div></h2>
         </div>
+
 
         <div id="name" class="center">
             <span class="letter">K</span>
@@ -36,16 +37,98 @@
         <div id="navline"></div>
 
         <div id="contentContainer" class="center-c">
-            <div id="content">
+            <div id="content" class="center-c">
+                <div id="aboutMeContent" class="center-c" style="display: none;">
+                    <div id="skillsContainer" class="center-c">
 
+                        <div class="skillsTitle center">
+                            <h2>
+                                - my skills -
+                            </h2>
+                        </div>
+                        
+                        <div class="skillContainer center">
+                            <div class="skillLeft center">
+                                <h2>Unity / C# </h2>
+                            </div>
+                            <div class="skillRight">
+                                <h2 class="starP">★ ★ ★ ★ ★ ★&nbsp;</h2>
+                                <h2 class="starN">☆ ☆</h2>
+                            </div>
+                        </div>
+                        
+                        <div class="skillContainer center">
+                            <div class="skillLeft center">
+                                <h2>HTML / JS / CSS  </h2>
+                            </div>
+                            <div class="skillRight">
+                                <h2 class="starP">★ ★ ★ ★ ★ ★&nbsp;</h2>
+                                <h2 class="starN">☆ ☆</h2>
+                            </div>
+                        </div>
+                        
+                        <div class="skillContainer center">
+                            <div class="skillLeft center">
+                                <h2>Python </h2>
+                            </div>
+                            <div class="skillRight">
+                                <h2 class="starP">★ ★ ★ ★ ★&nbsp;</h2>
+                                <h2 class="starN">☆ ☆ ☆</h2>
+                            </div>
+                        </div>
+                        
+                        <div class="skillContainer center">
+                            <div class="skillLeft center">
+                                <h2>php / sql</h2>
+                            </div>
+                            <div class="skillRight">
+                                <h2 class="starP">★ ★ ★ ★&nbsp;</h2>
+                                <h2 class="starN">☆ ☆ ☆ ☆</h2>
+                            </div>
+                        </div>
+                        
+                        <div class="skillContainer center">
+                            <div class="skillLeft center">
+                                <h2>coding practices</h2>
+                            </div>
+                            <div class="skillRight">
+                                <h2 class="starP">★ ★ ★ ★ ★ ★&nbsp;</h2>
+                                <h2 class="starN">☆ ☆</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="skillsDescription"></div>
+                </div>
             </div>
             <div class="contentEndLine"></div>
         </div>
         <div id="content2Container"  class="center-c">
             <div id="content2">
-                
+                <div id="aboutMeContent2" class="center-c" style="display: none;">
+                    <div id="aboutMeImageContainer" class="center-c">
+                        <div id="aboutMeImage"></div>
+                    </div>
+                    <div id="aboutMeDescription" class="center">
+                        <p >
+                            My name is 
+                            <span>kyan mensen</span> 
+                            and I am a 
+                            <span>Dutch</span>
+                            <span>Software Engineer</span> 
+                            currently studying at sintlucas in eindhoven.
+                            I am 
+                            <span>19 years old</span>
+                            and have deep interests with
+                            anything involving code
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="contentEndLine"></div>
+        </div>
+
+        <div id="welcomeText" class="center">
+            <h3 >WELCOME!</h3>
         </div>
 
     </div>

@@ -3,6 +3,7 @@ const repeat = 8;
 const letterSpacing = 200;
 const sentenceSpacing = 4;
 
+
 document.addEventListener('DOMContentLoaded', function () {
     const splitSentence = sentence.split("");
     const originalLetter = document.getElementById('textLetter');
