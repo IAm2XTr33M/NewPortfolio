@@ -1,4 +1,4 @@
-var devMode = false;
+var devMode = true;
 var devStartingPage = 2;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -150,5 +150,54 @@ document.addEventListener('DOMContentLoaded', async () => {
     projects = await getProjectData();  // Await the data
 
     console.log(projects)
-
+    for(var i = 0; i < projects.length; i++){
+        CreateProject(
+            projects[i].projectName,
+            projects[i].previewDescription, 
+            projects[i].previewImage, 
+            projects[i].rating, 
+            projects[i].date, 
+            i)
+    }
 });
+
+function CreateProject(title, description, imageUrl, rating, date, index) {
+    var parentElement = document.getElementById("projectSelectorProjects");
+
+    var template = document.getElementById("projectTemplate");
+
+    var projectClone = template.cloneNode(true);
+
+    projectClone.removeAttribute("id");
+
+    projectClone.dataset.projectsIndex = index;
+    projectClone.dataset.rating = rating;
+    projectClone.dataset.date = date;
+
+    var projectTitle = projectClone.querySelector("h2");
+    var projectDescription = projectClone.querySelector("h3");
+    var projectImgDiv = projectClone.querySelector(".projectImg");
+
+    projectTitle.textContent = title;
+    projectDescription.textContent = description;
+
+    if (imageUrl) {
+        projectImgDiv.style.backgroundImage = "url('" + imageUrl + "')";
+    }
+
+    parentElement.appendChild(projectClone);
+}
+
+
+function ChangeProjectsSize(){
+    var el = document.getElementById("projectSelectorProjects");
+
+    if(el.classList.contains("projectLargeItems")){
+        el.classList.remove("projectLargeItems");
+        el.classList.add("projectSmallItems");
+    }
+    else if(el.classList.contains("projectSmallItems")){
+        el.classList.remove("projectSmallItems");
+        el.classList.add("projectLargeItems");
+    }
+}

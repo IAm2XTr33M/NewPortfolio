@@ -1,10 +1,10 @@
 [
     {
         "projectName" : "Valoguessr",
-        "previewDescription" : "",
+        "previewDescription" : "This is a description",
         "previewImage" : "",
-        "rating" : "",
-        "date" : 0 ,
+        "rating" : 10,
+        "date" : 20240515 ,
         "learned" : "",
         "headerImg" : "",
         "headerText" : "",
@@ -17,11 +17,11 @@
         "link" : ""
     },
     {
-        "projectName" : "Valoguessr",
+        "projectName" : "Something else",
         "previewDescription" : "",
         "previewImage" : "",
-        "rating" : "",
-        "date" : 0 ,
+        "rating" : 5,
+        "date" :  20240512,
         "learned" : "",
         "headerImg" : "",
         "headerText" : "",
