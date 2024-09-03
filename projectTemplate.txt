@@ -1,0 +1,18 @@
+,
+    {
+        "projectName" : "",
+        "previewDescription" : "",
+        "previewImage" : "",
+        "rating" : "",
+        "date" : 0 ,
+        "learned" : "",
+        "headerImg" : "",
+        "headerText" : "",
+        "img1" : "",
+        "paragraph1" : "",
+        "img2" : "",
+        "paragraph2" : "",
+        "img3" : "",
+        "paragraph3" : "",
+        "link" : ""
+    }

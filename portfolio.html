@@ -13,10 +13,10 @@
     <div id="mainContainer">
 
         <div id="navbar" class="center">
-            <h2 onclick="selectNavbarElement(1)" id="navAbout" class="selected" >- About me -<div></div></h2>
-            <h2 onclick="selectNavbarElement(2)" id="navProjects" >- Projects -<div></div></h2>
-            <h2 onclick="selectNavbarElement(3)" id="nacSocials" >- Socials -<div></div></h2>
-            <h2 onclick="selectNavbarElement(4)" id="navContact" >- Contact -<div></div></h2>
+            <h2 onclick="selectNavbarElement(1)" id="nav1" class="selected" >- About me -<div></div></h2>
+            <h2 onclick="selectNavbarElement(2)" id="nav2" >- Projects -<div></div></h2>
+            <h2 onclick="selectNavbarElement(3)" id="nav3" >- Socials -<div></div></h2>
+            <h2 onclick="selectNavbarElement(4)" id="nav4" >- Contact -<div></div></h2>
         </div>
 
 
@@ -28,7 +28,7 @@
             <span class="">&nbsp;</span>
             <span class="letter">M</span>
             <span class="letter">e</span>
-            <span class="letter">n</span>
+            <span class="letter">n</span> 
             <span class="letter">s</span>
             <span class="letter">e</span>
             <span class="letter">n</span>
@@ -38,7 +38,7 @@
 
         <div id="contentContainer" class="center-c">
             <div id="content" class="center-c">
-                <div id="aboutMeContent" class="center-c" style="display: none;">
+                <div id="page1Content" class="center-c" style="display: none;">
                     <div id="skillsContainer" class="center-c">
 
                         <div class="skillsTitle center">
@@ -99,12 +99,17 @@
                     </div>
                     <div id="skillsDescription"></div>
                 </div>
+                <div id="page2Content" class="center-c" style="display: none; transform: translateX(100vw);">
+
+                </div>
+                <div id="page3Content" class="center-c" style="display: none; transform: translateX(100vw);"><p style="color: white;">page3</p></div>
+                <div id="page4Content" class="center-c" style="display: none; transform: translateX(100vw);"><p style="color: white;">page4</p></div>
             </div>
             <div class="contentEndLine"></div>
         </div>
         <div id="content2Container"  class="center-c">
             <div id="content2">
-                <div id="aboutMeContent2" class="center-c" style="display: none;">
+                <div id="page1Content2" class="center-c" style="display: none;">
                     <div id="aboutMeImageContainer" class="center-c">
                         <div id="aboutMeImage"></div>
                     </div>
@@ -123,6 +128,26 @@
                         </p>
                     </div>
                 </div>
+                <div id="page2Content2" class="center-c" style="display: none; transform: translateX(100vw); color: white;">
+                    <div id="projectSelectorContainer">
+                        <div id="projectSelectorSettings"></div>
+                        <div id="projectSelectorProjects" class="projectLargeItems">
+                            
+                            <div class="project" onclick="selectProject(this)" id="projectTemplate">
+                                <div class="projectImg"></div>
+                                <div class="projectInf">
+                                    <h2>ProjectName</h2>
+                                    <div class="projectDescCenter">
+                                        <h3>this is a small project description</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div id="page3Content2" class="center-c" style="display: none; transform: translateX(100vw);"></div>
+                <div id="page4Content2" class="center-c" style="display: none; transform: translateX(100vw);"></div>
             </div>
             <div class="contentEndLine"></div>
         </div>

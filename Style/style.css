@@ -153,15 +153,39 @@ body{
     height: 99%;
     width: 100%;
     /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#content > div{
+    transition: transform 500ms;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 #content2{
     height: 99%;
     width: 100%;
     /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
-#aboutMeContent2{
+#content2 > div{
+    transition: transform 500ms;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+}
+
+#page1Content2{
     width: 100%;
     height: 100%;
 }
@@ -172,18 +196,18 @@ body{
 }
 
 
-#aboutMeContent2 #aboutMeImage{
+#page1Content2 #aboutMeImage{
     width: 55%;
     aspect-ratio: 3/4;
     background-color: rgba(255, 255, 255, 0.145);
 }
 
-#aboutMeContent2 #aboutMeDescription{
+#page1Content2 #aboutMeDescription{
     width: 90%;
     height: 27%;
 }
 
-#aboutMeContent2 #aboutMeDescription p{
+#page1Content2 #aboutMeDescription p{
     font-family: monsterrat;
     font-size: 1vw;
     line-height: 130%;
@@ -192,7 +216,7 @@ body{
     transition: color var(--InvertedTransitionTime);
 }
 
-#aboutMeContent2 #aboutMeDescription p span{
+#page1Content2 #aboutMeDescription p span{
     color: var(--highlight);
     transition: color var(--InvertedTransitionTime);
 }
@@ -242,7 +266,7 @@ body{
 
 
 
-#aboutMeContent{
+#page1Content{
     width: 100%;
     height: 100%;
 }
@@ -327,22 +351,170 @@ h2{
 }
 
 
+#projectSelectorContainer{
+    width: 100%;
+    height: 100%;
+    /* outline: red solid 1px; */
 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-left: rgba(0, 0, 0, 0.25) solid 12px;
+}
+#projectSelectorSettings{
+    width: 100%;
+    height: 10%;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+#projectSelectorProjects{
+    width: 100%;
+    height: 90%;
+    /* outline: yellow solid 1px; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-left: rgba(0, 0, 0, 0.295) solid 4px;
+    border-top: rgba(0, 0, 0, 0.295) solid 4px;
+    border-bottom: rgba(0, 0, 0, 0.295) solid 6px;
+}
 
+.projectSmallItems{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: calc(25%);
 
+    gap: 0px;
+}
 
+.projectLargeItems{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 25%;
+    gap: 10px;
+}
 
+#projectSelectorProjects::-webkit-scrollbar-track
+{
+    background-color: rgb(0, 0, 0, 0.2);
+}
 
+#projectSelectorProjects::-webkit-scrollbar
+{
+	width: 12px;
+    transition: background-color 4s ease, width 4s ease; /* Add transition for smooth change */
 
+}
 
+#projectSelectorProjects::-webkit-scrollbar-thumb
+{
+	background-color: var(--highlight);
+    border-bottom: rgba(0, 0, 0, 0.5) solid 2px;
+    border-right: rgba(0, 0, 0, 0.5) solid 2px;
+    border-radius: 3px;
 
+}
 
+@-moz-document url-prefix() {
+    #projectSelectorProjects {
+        scrollbar-width: auto;
+        scrollbar-color: var(--highlight) rgba(0, 0, 0, 0.25); /* Set thumb and track color */
+    }
+}
 
+.project{
+    scale: 90%;
+    width:100%;
+    height: 100%;
+    background-color: rgb(48, 48, 48);
+}
+.project:hover{
+    cursor: pointer;
+}
 
+.projectSmallItems .project{
+    transition: scale 200ms;
+}
 
+.projectSmallItems .project:active{
+    scale: 85%;
+    transition: 20ms;
+}
 
+.project .projectInf h2{
+    transition: 500ms !important;
+}
+.project:hover .projectInf h2{
+    color: var(--highlight);
+    transition: 100ms !important;
+}
 
+.projectLargeItems .project{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: 2px 2px 0px 2px var(--highlight);
+}
+.projectLargeItems .project .projectImg{
+    transition: 00ms;
+}
+.projectLargeItems .project .projectInf{
+    transition: 100ms;
+}
+.projectLargeItems .selected .projectImg{
+    transform: translateX(150%);
+    transition: 300ms;
+}
+.projectLargeItems .selected .projectInf{
+    transform: translateX(-66%);
+    transition: 200ms;
+}
 
+.projectLargeItems .project .projectImg{
+    width: 40%;
+    height: 100%;
+    background-color: rgb(204, 204, 204);
+}
+.projectLargeItems .project .projectInf{
+    width: 60%;
+    height: 100%;
+    background-color: rgb(58, 58, 58);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 5%;
+    padding-top: 4%;
+}
+.projectLargeItems .project .projectInf h2{
+    font-size: 200%;
+    width: 100%;
+    height: 30%;
+}
+.projectLargeItems .project .projectInf h3{
+    font-size: 100%;
+    font-family: monsterrat;
+    text-align: center;
+}
+
+.projectLargeItems .projectDescCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+}
+.projectSmallItems .project{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.projectSmallItems .project .projectImg{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(204, 204, 204);
+}
+.projectSmallItems .project .projectInf h3{
+    display: none;
+}
 
 
 
@@ -401,8 +573,32 @@ h2{
     flex-direction: column;
 }
 
+.slideLeft{
+    animation: SlideLeft 1s forwards;
+}
+.slideRight{
+    animation: SlideRight 1s forwards;
+}
 
+.slideInLeft{
+    animation: SlideLeft 1s backwards;
+}
+.slideInRight{
+    animation: SlideRight 1s backwards;
+}
 
+@keyframes SlideLeft {
+    0% {transform: translateX(0vw);
+    }
+    100% {transform: translateX(-100vw);
+    }
+}
+@keyframes SlideRight {
+    0% {transform: translateX(0vw);
+    }
+    100% {transform: translateX(100vw);
+    }
+}
 
 
 @keyframes LetterLightUp {

@@ -1,3 +1,6 @@
+var devMode = false;
+var devStartingPage = 2;
+
 document.addEventListener('DOMContentLoaded', () => {
     const letters = document.querySelectorAll('.letter');
 
@@ -22,11 +25,24 @@ document.addEventListener('DOMContentLoaded', () => {
     invertOff();
 
     async function invertOff(){
-        await delay(3000);
+        if(!devMode){
+            await delay(3000);
+            for(var i = 1; i < 5; i++){
+                document.getElementById("page"+i+"Content").style.display = "block";
+                document.getElementById("page"+i+"Content2").style.display = "block";
+                document.body.style.backgroundImage = ""
+            }
+        }
+        else{
+            document.getElementById("page"+devStartingPage+"Content").style.transform = "";
+            document.getElementById("page"+devStartingPage+"Content2").style.transform = "";
+            document.getElementById("page"+devStartingPage+"Content").style.display = "block";
+            document.getElementById("page"+devStartingPage+"Content2").style.display = "block";
+            document.body.style.transition = "";
+            selectNavbarElement(devStartingPage);
+        }
         document.body.classList.remove("inverted");
         document.getElementById("welcomeText").style.display = "none";
-        document.getElementById("aboutMeContent").style.display = "block";
-        document.getElementById("aboutMeContent2").style.display = "block";
     }
 });
 
@@ -55,46 +71,84 @@ function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-var currentSelectedEl;
+var currentPage = 1;
 
 function selectNavbarElement(number){
+    var currentContent1 = document.getElementById("page"+currentPage+"Content");
+    var currentContent2 = document.getElementById("page"+currentPage+"Content2");
 
-    if(currentSelectedEl == null){currentSelectedEl = document.getElementById("navAbout");}
+    var nextContent1 = document.getElementById("page"+number+"Content");
+    var nextContent2 = document.getElementById("page"+number+"Content2");
 
-    var nextSelectedEl;
 
-    switch (number) {
-        case 1:
-            nextSelectedEl = document.getElementById("navAbout");
-            break;
-        case 2:
-            nextSelectedEl = document.getElementById("navProjects");
-            break;
-        case 3:
-            nextSelectedEl = document.getElementById("nacSocials");
-            break;
-        case 4:
-            nextSelectedEl = document.getElementById("navContact");
-            break;
-        default:
-            nextSelectedEl = document.getElementById("navAbout");
-            break;
+    if(number == currentPage){
+        console.log("You are already on this page"); 
+        return;
     }
 
-    console.log("next is");
-    console.log(nextSelectedEl);
+    nextContent1.style.transform = "";
+    nextContent2.style.transform = "";
+    nextContent1.style.display = "block";
+    nextContent2.style.display = "block";
 
-    if(nextSelectedEl != currentSelectedEl){
-
-        if(currentSelectedEl != null){
-            currentSelectedEl.classList.remove("selected");
-        }
-        currentSelectedEl = nextSelectedEl;
-        currentSelectedEl.classList.add("selected");        
+    if(number > currentPage){
+        currentContent1.style.transform = "translateX(-100vw)";
+        currentContent2.style.transform = "translateX(-100vw)";
     }
+    else if(number < currentPage){
+        currentContent1.style.transform = "translateX(100vw)";
+        currentContent2.style.transform = "translateX(100vw)";
+    }
+    else{
+        console.log("You are already on this page"); 
+        return;
+    }
+
+    document.getElementById("nav"+currentPage).classList.remove("selected");
+    document.getElementById("nav"+number).classList.add("selected");
+    currentPage = number;
 }
 
 
 var colors = [
 "#4c06cd","#00bfff","#00bfff","#ae00ff","#ff00e6","#ff79f2","#ff2c7d","#ff0051","#386bd9","#38d9be","#91ffed","#00ff99","#97ffd5","#0dff00","#64f85c","#80ff00","#b700ff","#8c00ff","#ffd900","#ffa600","#ff6f00","#b3ff00","#ffbf00","#ff0000","#ff6d6d","#ffee6a"
 ];
+
+var projects;
+
+var selectedProject;
+function selectProject(el){
+    if(selectedProject != el){
+        el.classList.add("selected");
+        if(selectedProject != null){
+            selectedProject.classList.remove("selected");
+        }
+        selectedProject = el;
+        console.log(selectedProject);
+    }
+}
+
+var projects;
+
+
+async function getProjectData(){
+    var path = "../projects.json";
+    try {
+        const res = await fetch(path);
+        if (!res.ok) {
+            throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.error("Unable to fetch data:", error);
+        return null; // Return null or handle the error as needed
+    }
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    projects = await getProjectData();  // Await the data
+
+    console.log(projects)
+
+});
