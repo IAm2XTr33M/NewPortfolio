@@ -1,4 +1,4 @@
-var devMode = true;
+var devMode = false;
 var devStartingPage = 2;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -73,39 +73,52 @@ function delay(ms) {
 
 var currentPage = 1;
 
-function selectNavbarElement(number){
+async function selectNavbarElement(number){
     var currentContent1 = document.getElementById("page"+currentPage+"Content");
     var currentContent2 = document.getElementById("page"+currentPage+"Content2");
 
     var nextContent1 = document.getElementById("page"+number+"Content");
     var nextContent2 = document.getElementById("page"+number+"Content2");
 
-
     if(number == currentPage){
         console.log("You are already on this page"); 
         return;
     }
+
+    var transform = "translateX(100vw)"
+    var transformReverse = "translateX(-100vw)"
+    if(number > currentPage){
+        transform = "translateX(-100vw)";
+        transformReverse = "translateX(100vw)";
+    }
+    else if(number == currentPage){return;}
+
+    currentContent1.style.transform = transform;
+    currentContent2.style.transform = transform;
+
+    nextContent1.style.transition = "none";
+    nextContent2.style.transition = "none";
+
+    await delay(10);
+
+    nextContent1.style.transform = transformReverse;
+    nextContent2.style.transform = transformReverse;
+
+    await delay(10);
+
+    nextContent1.style.transition = "transform 500ms";
+    nextContent2.style.transition = "transform 500ms";
+
+    await delay(10);
 
     nextContent1.style.transform = "";
     nextContent2.style.transform = "";
     nextContent1.style.display = "block";
     nextContent2.style.display = "block";
 
-    if(number > currentPage){
-        currentContent1.style.transform = "translateX(-100vw)";
-        currentContent2.style.transform = "translateX(-100vw)";
-    }
-    else if(number < currentPage){
-        currentContent1.style.transform = "translateX(100vw)";
-        currentContent2.style.transform = "translateX(100vw)";
-    }
-    else{
-        console.log("You are already on this page"); 
-        return;
-    }
-
     document.getElementById("nav"+currentPage).classList.remove("selected");
     document.getElementById("nav"+number).classList.add("selected");
+    var oldPage = currentPage;
     currentPage = number;
 }
 
@@ -124,7 +137,141 @@ function selectProject(el){
             selectedProject.classList.remove("selected");
         }
         selectedProject = el;
-        console.log(selectedProject);
+        LoadAllInformation(selectedProject.dataset.projectsIndex);
+    }
+}
+
+function LoadAllInformation(index){
+    var currentProject = projects[index]
+
+    var headerImg = currentProject.headerImg;
+    var headerImgEl = document.getElementById("projectHeaderImg");
+    if(typeof headerImg === "string" && headerImg.length !== 0 && headerImg !== null){
+        headerImgEl.style.display = "block";
+        headerImgEl.src = headerImg;
+    }
+    else{
+        headerImgEl.style.display = "none";
+    }
+
+    var projectName = currentProject.projectName;
+    var projectNameEl = document.getElementById("projectTitle");
+    if(typeof projectName === "string" && projectName.length !== 0 && projectName !== null){
+        projectNameEl.style.display = "block";
+        projectNameEl.innerText = projectName;
+    }
+    else{
+        projectNameEl.style.display = "none";
+    }
+
+    var headerText = currentProject.headerText;
+    var headerTextEL = document.getElementById("projectHeaderText");
+    if(typeof headerText === "string" && headerText.length !== 0 && headerText !== null){
+        headerTextEL.style.display = "block";
+        headerTextEL.innerText = headerText;
+    }
+    else{
+        headerTextEL.style.display = "none";
+    }
+
+    var date = currentProject.date;
+    var dateEL = document.getElementById("projectDate");
+    if(date !== null){
+        dateEL.style.display = "block";
+        dateEL.innerText = date;
+    }
+    else{
+        dateEL.style.display = "none";
+    }
+
+    var rating = currentProject.rating;
+    var ratingEL = document.getElementById("projectRating");
+    if(rating !== null){
+        ratingEL.style.display = "block";
+        ratingEL.innerText = rating;
+    }
+    else{
+        ratingEL.style.display = "none";
+    }
+
+    var img1 = currentProject.img1;
+    var img1EL = document.getElementById("projectSection1Img");
+    if(typeof img1 === "string" && img1.length !== 0 && img1 !== null){
+        img1EL.style.display = "block";
+        img1EL.src = img1;
+    }
+    else{
+        img1EL.style.display = "none";
+    }
+
+    var paragraph1 = currentProject.paragraph1;
+    var paragraph1EL = document.getElementById("projectSection1Text");
+    if(typeof paragraph1 === "string" && paragraph1.length !== 0 && paragraph1 !== null){
+        paragraph1EL.style.display = "block";
+        paragraph1EL.innerText = paragraph1;
+    }
+    else{
+        paragraph1EL.style.display = "none";
+    }
+
+    var img2 = currentProject.img2;
+    var img2EL = document.getElementById("projectSection2Img");
+    if(typeof img2 === "string" && img2.length !== 0 && img2 !== null){
+        img2EL.style.display = "block";
+        img2EL.src = img2;
+    }
+    else{
+        img2EL.style.display = "none";
+    }
+
+    var paragraph2 = currentProject.paragraph2;
+    var paragraph2EL = document.getElementById("projectSection2Text");
+    if(typeof paragraph2 === "string" && paragraph2.length !== 0 && paragraph2 !== null){
+        paragraph2EL.style.display = "block";
+        paragraph2EL.innerText = paragraph2;
+    }
+    else{
+        paragraph2EL.style.display = "none";
+    }
+
+    var img3 = currentProject.img3;
+    var img3EL = document.getElementById("projectSection3Img");
+    if(typeof img3 === "string" && img3.length !== 0 && img3 !== null){
+        img3EL.style.display = "block";
+        img3EL.src = img3;
+    }
+    else{
+        img3EL.style.display = "none";
+    }
+
+    var paragraph3 = currentProject.paragraph3;
+    var paragraph3EL = document.getElementById("projectSection3Text");
+    if(typeof paragraph3 === "string" && paragraph3.length !== 0 && paragraph3 !== null){
+        paragraph3EL.style.display = "block";
+        paragraph3EL.innerText = paragraph3;
+    }
+    else{
+        paragraph3EL.style.display = "none";
+    }
+
+    var learned = currentProject.learned;
+    var learnedEL = document.getElementById("projectLearned");
+    if(typeof learned === "string" && learned.length !== 0 && learned !== null){
+        learnedEL.style.display = "block";
+        learnedEL.innerText = learned;
+    }
+    else{
+        learnedEL.style.display = "none";
+    }
+
+    var link = currentProject.link;
+    var linkEL = document.getElementById("projectLink");
+    if(typeof link === "string" && link.length !== 0 && link !== null){
+        linkEL.style.display = "block";
+        linkEL.href = link;
+    }
+    else{
+        linkEL.style.display = "none";
     }
 }
 
@@ -149,15 +296,17 @@ async function getProjectData(){
 document.addEventListener('DOMContentLoaded', async () => {
     projects = await getProjectData();  // Await the data
 
-    console.log(projects)
     for(var i = 0; i < projects.length; i++){
-        CreateProject(
-            projects[i].projectName,
-            projects[i].previewDescription, 
-            projects[i].previewImage, 
-            projects[i].rating, 
-            projects[i].date, 
-            i)
+    CreateProject(
+        projects[i].projectName,
+        projects[i].previewDescription, 
+        projects[i].previewImage, 
+        projects[i].rating, 
+        projects[i].date, 
+        i)
+        if(i == 0){
+            LoadAllInformation(0)
+        }
     }
 });
 

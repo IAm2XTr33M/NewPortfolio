@@ -1,20 +1,20 @@
 [
     {
         "projectName" : "Valoguessr",
-        "previewDescription" : "This is a description",
-        "previewImage" : "",
+        "previewDescription" : "My proudest creation, A mashup between valorant and geoguessr.",
+        "previewImage" : "Img/1.png",
         "rating" : 10,
         "date" : 20240515 ,
-        "learned" : "",
-        "headerImg" : "",
-        "headerText" : "",
-        "img1" : "",
-        "paragraph1" : "",
-        "img2" : "",
-        "paragraph2" : "",
-        "img3" : "",
-        "paragraph3" : "",
-        "link" : ""
+        "learned" : "I actually learned a lot of things",
+        "headerImg" : "Img/1.png",
+        "headerText" : "Valoguessr is a mixup between GeoGuessr and Valorant that I spent a lot of time on, I had the idea to make it once and just couldnt stop myself. Seeing everyone enjoy my website from valorant developers till players made me super happy!",
+        "img1" : "Img/2.png",
+        "paragraph1" : "In this image you can see what it looks like playing valoguessr.",
+        "img2" : "Img/3.png",
+        "paragraph2" : "In this image you can see all of the different game modes and settings to pick from",
+        "img3" : "Img/4.png",
+        "paragraph3" : "This image is an earlier version of valoguessr that I made way before I actually settled on the current version.",
+        "link" : "link"
     },
     {
         "projectName" : "Something else",

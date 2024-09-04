@@ -161,7 +161,6 @@ body{
 }
 
 #content > div{
-    transition: transform 500ms;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -179,7 +178,6 @@ body{
 }
 
 #content2 > div{
-    transition: transform 500ms;
     position: absolute;
     width: 90%;
     height: 100%;
@@ -525,7 +523,104 @@ h2{
     display: none;
 }
 
+#page2Content{
+    height: 100%;
+    width: 100%;
+}
 
+.projectContainer{
+    margin-left: 10%;
+    width: 80%;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    /* outline: yellow solid 1px; */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-left: rgba(0, 0, 0, 0.295) solid 12px !important;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.projectContainer::-webkit-scrollbar-track
+{
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+.projectContainer::-webkit-scrollbar
+{
+	width: 12px;
+    transition: background-color 4s ease, width 4s ease; /* Add transition for smooth change */
+
+}
+
+.projectContainer::-webkit-scrollbar-thumb
+{
+	background-color: var(--highlight);
+    border-bottom: rgba(0, 0, 0, 0.5) solid 2px;
+    border-right: rgba(0, 0, 0, 0.5) solid 2px;
+    border-radius: 3px;
+
+}
+
+@-moz-document url-prefix() {
+    .projectContainer {
+        scrollbar-width: auto;
+        scrollbar-color: var(--highlight) rgba(0, 0, 0, 0.25); /* Set thumb and track color */
+    }
+}
+
+#projectTitle{
+    font-size: 350%;
+    line-height: 200%;
+}
+
+#projectHeaderImg{
+    background-color: white;
+    width: 80%;
+    min-height: 40%;
+    
+}
+#projectDate{
+    width: 100%;
+    text-align: start;
+    margin-top: 3%;
+}
+#projectRating{
+    width: 100%;
+    text-align: start;
+    line-height: 100%;
+}
+
+.projectSection{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 7%;
+    margin-top: 10%;
+}
+
+.projectSection img{
+    width: 50%;
+    aspect-ratio: 16/9;
+    background-color: white;
+}
+.projectSection h2{
+    width: 40%;
+    font-size: 140%;
+}
+#projectLearned{
+    line-height: 450%;
+}
+
+#projectLink{
+    line-height: 300%;
+}
 
 @keyframes fade {
     from{
