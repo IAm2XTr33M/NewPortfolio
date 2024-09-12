@@ -178,7 +178,7 @@ function LoadAllInformation(index){
     var dateEL = document.getElementById("projectDate");
     if(date !== null){
         dateEL.style.display = "block";
-        dateEL.innerText = date;
+        dateEL.innerText = formatDate(date);
     }
     else{
         dateEL.style.display = "none";
@@ -188,16 +188,23 @@ function LoadAllInformation(index){
     var ratingEL = document.getElementById("projectRating");
     if(rating !== null){
         ratingEL.style.display = "block";
-        ratingEL.innerText = rating;
+        ratingEL.innerText = "I rate this project: "+rating+" / 10";
     }
     else{
         ratingEL.style.display = "none";
     }
 
+    var section1 = document.getElementById("projectSection1");
+    section1.style.display = "none";
+    
     var img1 = currentProject.img1;
     var img1EL = document.getElementById("projectSection1Img");
+    if(img1EL.classList.contains("projectImgBig")){
+        img1EL.classList.remove("projectImgBig")
+    }
     if(typeof img1 === "string" && img1.length !== 0 && img1 !== null){
         img1EL.style.display = "block";
+        section1.style.display = "flex";
         img1EL.src = img1;
     }
     else{
@@ -208,16 +215,28 @@ function LoadAllInformation(index){
     var paragraph1EL = document.getElementById("projectSection1Text");
     if(typeof paragraph1 === "string" && paragraph1.length !== 0 && paragraph1 !== null){
         paragraph1EL.style.display = "block";
+        section1.style.display = "flex";
         paragraph1EL.innerText = paragraph1;
     }
     else{
         paragraph1EL.style.display = "none";
+        if(typeof img1 === "string" && img1.length !== 0 && img1 !== null){
+            img1EL.classList.add("projectImgBig")
+        }
     }
+
+    var section2 = document.getElementById("projectSection2");
+    section2.style.display = "none";
+    
 
     var img2 = currentProject.img2;
     var img2EL = document.getElementById("projectSection2Img");
+    if(img2EL.classList.contains("projectImgBig")){
+        img2EL.classList.remove("projectImgBig")
+    }
     if(typeof img2 === "string" && img2.length !== 0 && img2 !== null){
         img2EL.style.display = "block";
+        section2.style.display = "flex";
         img2EL.src = img2;
     }
     else{
@@ -228,30 +247,47 @@ function LoadAllInformation(index){
     var paragraph2EL = document.getElementById("projectSection2Text");
     if(typeof paragraph2 === "string" && paragraph2.length !== 0 && paragraph2 !== null){
         paragraph2EL.style.display = "block";
+        section2.style.display = "flex";
         paragraph2EL.innerText = paragraph2;
     }
     else{
         paragraph2EL.style.display = "none";
+        if(typeof img2 === "string" && img2.length !== 0 && img2 !== null){
+            img2EL.classList.add("projectImgBig")
+        }
     }
+
+    var section3 = document.getElementById("projectSection3");
+    section3.style.display = "none";
+    
 
     var img3 = currentProject.img3;
     var img3EL = document.getElementById("projectSection3Img");
+    if(img3EL.classList.contains("projectImgBig")){
+        img3EL.classList.remove("projectImgBig")
+    }
     if(typeof img3 === "string" && img3.length !== 0 && img3 !== null){
         img3EL.style.display = "block";
+        section3.style.display = "flex";
         img3EL.src = img3;
     }
     else{
         img3EL.style.display = "none";
+        
     }
 
     var paragraph3 = currentProject.paragraph3;
     var paragraph3EL = document.getElementById("projectSection3Text");
     if(typeof paragraph3 === "string" && paragraph3.length !== 0 && paragraph3 !== null){
         paragraph3EL.style.display = "block";
+        section3.style.display = "flex";
         paragraph3EL.innerText = paragraph3;
     }
     else{
         paragraph3EL.style.display = "none";
+        if(typeof img3 === "string" && img3.length !== 0 && img3 !== null){
+            img3EL.classList.add("projectImgBig")
+        }
     }
 
     var learned = currentProject.learned;
@@ -269,11 +305,23 @@ function LoadAllInformation(index){
     if(typeof link === "string" && link.length !== 0 && link !== null){
         linkEL.style.display = "block";
         linkEL.href = link;
+        linkEL.innerText = link;
     }
     else{
         linkEL.style.display = "none";
     }
 }
+
+function formatDate(num) {
+    let numStr = num.toString();
+    
+    let year = numStr.substring(0, 4);
+    let month = numStr.substring(4, 6);
+    let day = numStr.substring(6, 8);
+    
+    return `${day} / ${month} / ${year}`;
+}
+
 
 var projects;
 
@@ -305,9 +353,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         projects[i].date, 
         i)
         if(i == 0){
-            LoadAllInformation(0)
+            LoadAllInformation(0);
         }
     }
+
+    selectedSortButton = document.getElementById("sortButtonRating");
+    selectedSizeButton = document.getElementById("largeSizeButton")
 });
 
 function CreateProject(title, description, imageUrl, rating, date, index) {
@@ -334,19 +385,80 @@ function CreateProject(title, description, imageUrl, rating, date, index) {
         projectImgDiv.style.backgroundImage = "url('" + imageUrl + "')";
     }
 
+    if(index == 0){
+        projectClone.classList.add("selected");
+        selectedProject = projectClone;
+    }
+
     parentElement.appendChild(projectClone);
 }
 
 
-function ChangeProjectsSize(){
+var selectedSizeButton;
+
+function ChangeProjectsSize(size,el){
+
+    selectedSizeButton.classList.remove("selected");
+    selectedSizeButton = el;
+    selectedSizeButton.classList.add("selected");
+
     var el = document.getElementById("projectSelectorProjects");
 
-    if(el.classList.contains("projectLargeItems")){
+    if(size == 1){
         el.classList.remove("projectLargeItems");
         el.classList.add("projectSmallItems");
     }
-    else if(el.classList.contains("projectSmallItems")){
+    else if(size == 0){
         el.classList.remove("projectSmallItems");
         el.classList.add("projectLargeItems");
     }
+}
+
+var sortFlipped = false;
+var sortSubject = "[data-rating]"
+var selectedSortButton;
+
+function SortRating(el){
+    selectedSortButton.classList.remove("selected");
+    selectedSortButton = el;
+    selectedSortButton.classList.add("selected");
+    sortSubject = "[data-rating]";
+    SortProjects();
+}
+function SortDate(el){
+    selectedSortButton.classList.remove("selected");
+    selectedSortButton = el;
+    selectedSortButton.classList.add("selected");
+    sortSubject = "[data-date]";
+    SortProjects();
+}
+function FlipOrder(){
+    sortFlipped = !sortFlipped;
+    SortProjects();
+}
+function comparator(a, b) {
+    if(sortSubject == "[data-rating]"){
+        if(a.dataset.rating > b.dataset.rating)
+            return sortFlipped ? -1 : 1;
+        if (a.dataset.rating < b.dataset.rating)
+            return sortFlipped ? 1 : -1;
+    }
+    else if(sortSubject == "[data-date]"){
+        if(a.dataset.date > b.dataset.date)
+            return sortFlipped ? -1 : 1;
+        if (a.dataset.date < b.dataset.date)
+            return sortFlipped ? 1 : -1;
+    }
+    return 0;
+}
+
+function SortProjects(){
+    var subjects = document.querySelectorAll(sortSubject);
+
+    var subjectsArray = Array.from(subjects);
+    let sorted = subjectsArray.sort(comparator);
+
+    sorted.forEach(e =>
+        document.getElementById("projectSelectorProjects").appendChild(e)
+    );
 }

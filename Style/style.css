@@ -363,10 +363,49 @@ h2{
     width: 100%;
     height: 10%;
     background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    padding-left: 4%;
 }
 #projectSelectorSettings button{
-    width: 24%;
+    height: 60%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--highlight);
+    font-family: monsterrat;
+    letter-spacing: 1px;
+    border: var(--highlight) solid 1px;
+    border-radius: 10px;
+
+    background-size: contain;
+}
+#projectSelectorSettings button:hover{
+    cursor: pointer;
+    box-shadow: var(--highlight) 0px 0px 8px;
+    transition: 150ms;
+}
+#projectSelectorSettings button:active{
+    background-color: var(--highlight);
+    box-shadow: var(--highlight) 0px 0px 8px;
+    transition: 0ms;
+    color: black;
+    text-shadow: black 0px 0px 2px;
+}
+#smallSizeButton.selected{
+    text-shadow: black 0px 0px 1px !important;
+}
+#projectSelectorSettings .selected{
+    background-color: var(--highlight);
+    transition: 0ms;
+    color: black;
+    text-shadow: black 0px 0px 2px;
+    font-weight: bold;
+}
+#projectSelectorSettings button div{
+    width: 100%;
     height: 100%;
+    background-size: contain;
 }
 
 #projectSelectorProjects{
@@ -394,6 +433,7 @@ h2{
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: 25%;
     gap: 10px;
+    padding-top: 2%;
 }
 
 #projectSelectorProjects::-webkit-scrollbar-track
@@ -425,7 +465,6 @@ h2{
 }
 
 .project{
-    scale: 90%;
     width:100%;
     height: 100%;
     background-color: rgb(48, 48, 48);
@@ -435,33 +474,41 @@ h2{
 }
 
 .projectSmallItems .project{
-    transition: scale 200ms;
+    scale: 80%;
 }
 
 .projectSmallItems .project:active{
     scale: 85%;
     transition: 20ms;
 }
+.projectSmallItems .selected{
+    box-shadow: var(--highlight) 2px 2px 5px;
+}
 
 .project .projectInf h2{
-    transition: 500ms !important;
+    transition: color 500ms !important;
 }
 .project:hover .projectInf h2{
     color: var(--highlight);
-    transition: 100ms !important;
+    transition: color 100ms !important;
 }
 
 .projectLargeItems .project{
     display: flex;
+    width: 94% !important;
+    margin-left: 3%;
     align-items: center;
     flex-direction: row;
     box-shadow: 2px 2px 0px 2px var(--highlight);
 }
 .projectLargeItems .project .projectImg{
+    background-size: cover;
+    background-position: center;
     transition: 00ms;
 }
 .projectLargeItems .project .projectInf{
     transition: 100ms;
+    padding: 8px;
 }
 .projectLargeItems .selected .projectImg{
     transform: translateX(150%);
@@ -513,6 +560,7 @@ h2{
 .projectSmallItems .project .projectImg{
     width: 100%;
     height: 80%;
+    background-size: cover;
     background-color: rgb(204, 204, 204);
 }
 .projectSmallItems .project .projectInf h3{
@@ -583,7 +631,8 @@ h2{
 #projectHeaderImg{
     background-color: white;
     width: 80%;
-    min-height: 40%;
+    max-height: 60%;
+    /* min-height: 40%; */
     
 }
 #projectDate{
@@ -610,16 +659,32 @@ h2{
     aspect-ratio: 16/9;
     background-color: white;
 }
+
+.projectSection .projectImgBig{
+    width: 100% !important;
+}
+
 .projectSection h2{
     width: 40%;
     font-size: 140%;
 }
 #projectLearned{
-    line-height: 450%;
+    line-height: 100%;
+    margin-top: 5%;
 }
 
 #projectLink{
-    line-height: 300%;
+    font-size: 200%;
+    font-family: monsterrat-bold;
+    line-height: 350%;
+}
+
+#FlipOrderImg{
+    
+    background-image: url("/Img/SortArrows.png");
+    background-color: var(--highlight);
+    background-blend-mode:color-burn;
+    background-size: contain;
 }
 
 @keyframes fade {

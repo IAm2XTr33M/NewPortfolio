@@ -1,10 +1,9 @@
-,
     {
         "projectName" : "",
         "previewDescription" : "",
         "previewImage" : "",
-        "rating" : "",
-        "date" : 0 ,
+        "rating" : 0,
+        "date" :  0,
         "learned" : "",
         "headerImg" : "",
         "headerText" : "",
@@ -15,4 +14,4 @@
         "img3" : "",
         "paragraph3" : "",
         "link" : ""
-    }
+    },

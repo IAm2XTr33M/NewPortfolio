@@ -107,22 +107,22 @@
                         <h2 id="projectDate">9/5/2004</h2>
                         <h2 id="projectRating">10/10</h2>
 
-                        <div class="projectSection" style="margin-top: 5%;">
+                        <div class="projectSection" id="projectSection1" style="margin-top: 5%;">
                             <img src="" id="projectSection1Img">
                             <h2 id="projectSection1Text">This is some text that will be in a section This is some text that will be in a section This is some text that will be in a section</h2>
                         </div>
-                        <div class="projectSection">
+                        <div class="projectSection" id="projectSection2">
                             <h2 id="projectSection2Text">This is some text that will be in a section This is some text that will be in a section This is some text that will be in a section</h2>
                             <img src="" id="projectSection2Img">
                         </div>
-                        <div class="projectSection">
+                        <div class="projectSection" id="projectSection3">
                             <img src="" id="projectSection3Img">
-                            <h2 id="projectSection3Text">This is some text that will be in a section This is some text that will be in a section This is some text that will be in a section</h2>
+                            <h2 id="projectSection3Text">This is some text that will be in a section This is some text that will be in a section This is some text that will be in a section,This is some text that will be in a section This is some text that will be in a section This is some text that will be in a section,This is some text that will be in a section This is some text that will be in a section This is some text that will be in a section</h2>
                         </div>
 
                         <h2 id="projectLearned">I actually learned a bunch of stuff</h2>
                         
-                        <a href="" id="projectLink">yippee this is a link</a>
+                        <a href="" id="projectLink" target="_blank">yippee this is a link</a>
                         
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                             <span>Software Engineer</span> 
                             currently studying at sintlucas in eindhoven.
                             I am 
-                            <span>19 years old</span>
+                            <span>20 years old</span>
                             and have deep interests with
                             anything involving code
                         </p>
@@ -155,10 +155,11 @@
                 <div id="page2Content2" class="center-c" style="display: none; transform: translateX(100vw); color: white;">
                     <div id="projectSelectorContainer">
                         <div id="projectSelectorSettings">
-                            <button>Rating</button>
-                            <button>Date</button>
-                            <button>Flip order</button>
-                            <button onclick="ChangeProjectsSize()">Size</button>
+                            <button style="width: 17%;" id="sortButtonRating" class="selected" onclick="SortRating(this)">Sort by rating</button>
+                            <button style="width: 17%;" id="sortButtonDate" onclick="SortDate(this)">Sort by date</button>
+                            <button style="font-size: 200%;" onclick="FlipOrder()">⇅</button>
+                            <button style="font-size: 200%;" id="largeSizeButton" class="selected" onclick="ChangeProjectsSize(0,this)">▤</button>
+                            <button style="font-size: 200%;" id="smallSizeButton" onclick="ChangeProjectsSize(1,this)">▦</button>
                         </div>
                         <div id="projectSelectorProjects" class="projectLargeItems">
                             
