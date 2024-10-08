@@ -327,7 +327,7 @@ var projects;
 
 
 async function getProjectData(){
-    var path = "../projects.json";
+    var path = "/NewPortfolio/projects.json";
     try {
         const res = await fetch(path);
         if (!res.ok) {
