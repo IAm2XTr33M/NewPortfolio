@@ -1,5 +1,5 @@
-var devMode = false;
-var devStartingPage = 2;
+var devMode = true;
+var devStartingPage = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
     const letters = document.querySelectorAll('.letter');
@@ -461,4 +461,26 @@ function SortProjects(){
     sorted.forEach(e =>
         document.getElementById("projectSelectorProjects").appendChild(e)
     );
+}
+
+var isAboutFlipped = false;
+
+function SwapAboutMe(){
+    if(!isAboutFlipped){
+        document.getElementById("swapAboutMeText").innerHTML = "View my skills";
+        document.getElementById("aboutMeContainer").style.flexDirection = "column-reverse";
+        document.getElementById("skillsContainer").classList.add("HideAboutMe");
+        document.getElementById("workExperienceContainer").classList.add("ShowAboutMe");
+        document.getElementById("workExperienceContainer").classList.remove("HideAboutMe");
+        document.getElementById("skillsContainer").classList.remove("ShowAboutMe");
+    }
+    else{
+        document.getElementById("swapAboutMeText").innerHTML = "View my work experience";
+        document.getElementById("aboutMeContainer").style.flexDirection = "column";
+        document.getElementById("workExperienceContainer").classList.add("HideAboutMe");
+        document.getElementById("skillsContainer").classList.add("ShowAboutMe");
+        document.getElementById("skillsContainer").classList.remove("HideAboutMe");
+        document.getElementById("workExperienceContainer").classList.remove("ShowAboutMe");
+    }
+    isAboutFlipped = !isAboutFlipped;
 }
