@@ -1,4 +1,4 @@
-var devMode = true;
+var devMode = false;
 var devStartingPage = 1;
 
 document.addEventListener('DOMContentLoaded', () => {
