@@ -28,12 +28,12 @@
 
 @font-face {
     font-family: monsterrat-extra-bold;
-    src: url(/Fonts/Montserrat-ExtraBold.otf);
+    src: url(/fonts/Montserrat-ExtraBold.otf);
 }
 
 @font-face {
     font-family: monsterrat;
-    src: url(/Fonts/Montserrat-Bold.otf);
+    src: url(/fonts/Montserrat-Bold.otf);
 }
 
 /* <style>
