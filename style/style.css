@@ -869,7 +869,7 @@ h2{
 
 #FlipOrderImg{
     
-    background-image: url("/img/SortArrows.png");
+    background-image: url("../img/SortArrows.png");
     background-color: var(--highlight);
     background-blend-mode:color-burn;
     background-size: contain;
@@ -1007,21 +1007,21 @@ h2{
 
 @font-face {
     font-family: monsterrat;
-    src: url(/fonts/Montserrat-Bold.otf);
+    src: url(../fonts/Montserrat-Bold.otf);
 }
 @font-face {
     font-family: monsterrat-bold;
-    src: url(/fonts/Montserrat-Bold.otf);
+    src: url(../fonts/Montserrat-Bold.otf);
 }
 @font-face {
     font-family: monsterrat-extra-bold;
-    src: url(/fonts/Montserrat-ExtraBold.otf);
+    src: url(../fonts/Montserrat-ExtraBold.otf);
 }
 @font-face {
     font-family: monsterrat-light;
-    src: url(/fonts/Montserrat-Light.otf);
+    src: url(../fonts/Montserrat-Light.otf);
 }
 @font-face {
     font-family: monsterrat-thin;
-    src: url(/fonts/Montserrat-Thin.otf);
+    src: url(../fonts/Montserrat-Thin.otf);
 }
