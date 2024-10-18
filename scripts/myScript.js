@@ -1,5 +1,5 @@
-var devMode = false;
-var devStartingPage = 1;
+var devMode = true;
+var devStartingPage = 2;
 
 document.addEventListener('DOMContentLoaded', () => {
     const letters = document.querySelectorAll('.letter');
@@ -137,6 +137,7 @@ function selectProject(el){
             selectedProject.classList.remove("selected");
         }
         selectedProject = el;
+        document.getElementById("projectContainer").scrollTop = 0;
         LoadAllInformation(selectedProject.dataset.projectsIndex);
     }
 }
@@ -327,7 +328,7 @@ var projects;
 
 
 async function getProjectData(){
-    var path = "/NewPortfolio/projects.json";
+    var path = "projects.json";
     try {
         const res = await fetch(path);
         if (!res.ok) {
@@ -337,12 +338,12 @@ async function getProjectData(){
         return data;
     } catch (error) {
         console.error("Unable to fetch data:", error);
-        return null; // Return null or handle the error as needed
+        return null;
     }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
-    projects = await getProjectData();  // Await the data
+    projects = await getProjectData();
 
     for(var i = 0; i < projects.length; i++){
     CreateProject(
@@ -356,6 +357,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             LoadAllInformation(0);
         }
     }
+
+    SortProjects();
 
     selectedSortButton = document.getElementById("sortButtonRating");
     selectedSizeButton = document.getElementById("largeSizeButton")
@@ -414,8 +417,8 @@ function ChangeProjectsSize(size,el){
     }
 }
 
-var sortFlipped = false;
-var sortSubject = "[data-rating]"
+var sortFlipped = true;
+var sortSubject = "[data-rating]";
 var selectedSortButton;
 
 function SortRating(el){
@@ -425,6 +428,7 @@ function SortRating(el){
     sortSubject = "[data-rating]";
     SortProjects();
 }
+
 function SortDate(el){
     selectedSortButton.classList.remove("selected");
     selectedSortButton = el;
@@ -432,22 +436,27 @@ function SortDate(el){
     sortSubject = "[data-date]";
     SortProjects();
 }
+
 function FlipOrder(){
     sortFlipped = !sortFlipped;
     SortProjects();
 }
+
 function comparator(a, b) {
-    if(sortSubject == "[data-rating]"){
-        if(a.dataset.rating > b.dataset.rating)
-            return sortFlipped ? -1 : 1;
-        if (a.dataset.rating < b.dataset.rating)
-            return sortFlipped ? 1 : -1;
-    }
-    else if(sortSubject == "[data-date]"){
-        if(a.dataset.date > b.dataset.date)
-            return sortFlipped ? -1 : 1;
-        if (a.dataset.date < b.dataset.date)
-            return sortFlipped ? 1 : -1;
+    if (sortSubject == "[data-rating]") {
+        // Convert rating to number for comparison
+        let ratingA = parseFloat(a.dataset.rating);
+        let ratingB = parseFloat(b.dataset.rating);
+
+        if (ratingA > ratingB) return sortFlipped ? -1 : 1;
+        if (ratingA < ratingB) return sortFlipped ? 1 : -1;
+    } else if (sortSubject == "[data-date]") {
+        // Treat date as a number for comparison
+        let dateA = parseInt(a.dataset.date, 10);
+        let dateB = parseInt(b.dataset.date, 10);
+
+        if (dateA > dateB) return sortFlipped ? -1 : 1;
+        if (dateA < dateB) return sortFlipped ? 1 : -1;
     }
     return 0;
 }
@@ -458,10 +467,12 @@ function SortProjects(){
     var subjectsArray = Array.from(subjects);
     let sorted = subjectsArray.sort(comparator);
 
-    sorted.forEach(e =>
-        document.getElementById("projectSelectorProjects").appendChild(e)
-    );
+    // Clear the parent container before appending sorted elements
+    let parent = document.getElementById("projectSelectorProjects");
+    sorted.forEach(e => parent.appendChild(e));
 }
+
+
 
 var isAboutFlipped = false;
 

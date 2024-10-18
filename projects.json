@@ -20,7 +20,7 @@
         "projectName" : "Gearz",
         "previewDescription" : "2D platformer made as a school project along with artists.",
         "previewImage" : "Img/Gearz1.png",
-        "rating" : 7,
+        "rating" : 6.7,
         "date" :  20230405,
         "learned" : "I learned how to use github as a team and how to communicate along with the artists who made the game assets / art for us.",
         "headerImg" : "Img/Gearz2.png",
@@ -37,7 +37,7 @@
         "projectName" : "Ghost hunter",
         "previewDescription" : "C# Console game",
         "previewImage" : "Img/GhostHunter.png",
-        "rating" : 7,
+        "rating" : 6.2,
         "date" :  20230123,
         "learned" : "During this project I learned the meaning of object oriented programming and I learned what classes are and how valuable they are.",
         "headerImg" : "Img/GhostHunter2.png",
@@ -49,6 +49,57 @@
         "img3" : "",
         "paragraph3" : "",
         "link" : "https://github.com/IAm2XTr33M/Console-Text-Based-Game-Kyan-Mensen"
+    },
+    {
+        "projectName" : "VisualColliders",
+        "previewDescription" : "A unity editor tool that helps visualise colliders",
+        "previewImage" : "Img/VisualColliders3.png",
+        "rating" : 8,
+        "date" :  20211114,
+        "learned" : "During this project I learned: Scriptable objects, Rendering meshes trough code using Graphics.Render..... , Custom inspectors, and much more",
+        "headerImg" : "Img/VisualColliders1.png",
+        "headerText" : "I made this tool during my internship time at TinyRoar as they needed a tool to visualise colliders to help create the game, In the end im extremely happy with the result as its quick and easy to use but can visualize / color in your entire scene within seconds exactly how you want.",
+        "img1" : "Img/VisualColliders2.png",
+        "paragraph1" : "I made use of custom scriptable objects where you can add filters to filter certain colliders to color in a different color.",
+        "img2" : "Img/VisualColliders4.png",
+        "paragraph2" : "example of having it on/off",
+        "img3" : "Img/VisualColliders5.png",
+        "paragraph3" : "I made sure it also works with convex meshes",
+        "link" : "https://github.com/IAm2XTr33M/VisualCollider"
+    }
+    ,{
+        "projectName" : "Translocator",
+        "previewDescription" : "A unity editor tool that can replace / translocate specific objects",
+        "previewImage" : "Img/Translocator1.png",
+        "rating" : 6.8,
+        "date" :  20230919,
+        "learned" : "During this project I learned a lor about mass searching objects in a scene, searching for all instanced prefabs in a scene, creating a custom editor tool (not custom inspector) and having working buttons in there, how to implement undoing with a command pattern",
+        "headerImg" : "Img/Translocator3.png",
+        "headerText" : "This project is a tool I made during my internship at TinyRoar, they had an issue where they used a tool to draw grass sprites in a scene but each child sprite got put as a child that the grass was drawn on, this tool helped to find all prefabs / gameobjects in the scene and set their parent to one specific gameobject so they could choose to enable/disable all of them quickly and easily. ",
+        "img1" : "Img/Translocator4.png",
+        "paragraph1" : "I was also requested to add the ability to change all selected prefabs / gameobjects to a different prefab (that was better for performance), so I made you able to choose between translocate and replace.",
+        "img2" : "Img/Translocator5.png",
+        "paragraph2" : "The custom inspector I made makes it simple to go trough everything step by step.",
+        "img3" : "Img/Translocator2.png",
+        "paragraph3" : "You are able to search for gameobjects by name of by prefab",
+        "link" : "https://github.com/IAm2XTr33M/PrefabTranslocator"
+    }
+    ,{
+        "projectName" : "EventFinder",
+        "previewDescription" : "Script that finds unity events that lead to a specific gameobject",
+        "previewImage" : "",
+        "rating" : 6.7,
+        "date" :  0,
+        "learned" : "During this project I learned ",
+        "headerImg" : "",
+        "headerText" : "This is a small tool made to search for events that lead to a specific gameobject. Example of why I made it: there was an issue where a 'door' kept on getting triggered but we didnt know which 'button' opened said door, so using this tool it shows all gameobjects and their event names that can call events on said gameobject.",
+        "img1" : "",
+        "paragraph1" : "Small example of a Button(red) and a door(green), and it shows that the door has 3 unity events leading to it",
+        "img2" : "",
+        "paragraph2" : "",
+        "img3" : "",
+        "paragraph3" : "",
+        "link" : ""
     }
 ]
 
