@@ -424,7 +424,7 @@ body{
 }
 #swapAboutMeContainer h2{
     color: var(--highlight);
-    font-size: 600%;
+    font-size: 7vw;
     width: 100%;
     text-align: center;
     transform: scaleX(500%);
@@ -447,7 +447,7 @@ body{
 } 
 #swapAboutMeContainer h3{
     color: var(--highlight);
-    font-size: 200%;
+    font-size: 2.3vw;
     text-align: center;
     font-family: monsterrat;
     animation: WiggleAnimation 7s infinite;
@@ -723,7 +723,7 @@ h2{
     padding-top: 4%;
 }
 .projectLargeItems .project .projectInf h2{
-    font-size: 200%;
+    font-size: 1.8vw;
     width: 100%;
     height: 30%;
 }
@@ -812,7 +812,7 @@ h2{
 }
 
 #projectTitle{
-    font-size: 350%;
+    font-size: 3vw;
     line-height: 200%;
 }
 

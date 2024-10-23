@@ -1,4 +1,4 @@
-var devMode = true;
+var devMode = false;
 var devStartingPage = 2;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -352,7 +352,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         projects[i].previewImage, 
         projects[i].rating, 
         projects[i].date, 
-        i)
+        i,
+        projects[i].titleHeight,
+        projects[i].titleLineHeight,
+        projects[i].titleFontSize)
+
         if(i == 0){
             LoadAllInformation(0);
         }
@@ -364,7 +368,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     selectedSizeButton = document.getElementById("largeSizeButton")
 });
 
-function CreateProject(title, description, imageUrl, rating, date, index) {
+function CreateProject(title, description, imageUrl, rating, date, index, titleHeight, titleLineHeight, titleFontSize) {
     var parentElement = document.getElementById("projectSelectorProjects");
 
     var template = document.getElementById("projectTemplate");
@@ -378,6 +382,17 @@ function CreateProject(title, description, imageUrl, rating, date, index) {
     projectClone.dataset.date = date;
 
     var projectTitle = projectClone.querySelector("h2");
+
+    if(titleHeight != null){
+        projectTitle.style.height = titleHeight;
+    }
+    if(titleLineHeight != null){
+        projectTitle.style.lineHeight = titleLineHeight;
+    }
+    if(titleFontSize != null){
+        projectTitle.style.fontsize = titleFontSize;
+    }
+
     var projectDescription = projectClone.querySelector("h3");
     var projectImgDiv = projectClone.querySelector(".projectImg");
 
