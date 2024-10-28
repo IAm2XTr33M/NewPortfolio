@@ -150,7 +150,7 @@ function LoadAllInformation(index){
     var headerImgEl = document.getElementById("projectHeaderImg");
     if(typeof headerImg === "string" && headerImg.length !== 0 && headerImg !== null){
         headerImgEl.style.display = "block";
-        headerImgEl.src = headerImg;
+        headerImgEl.src = "../" + headerImg;
     }
     else{
         headerImgEl.style.display = "none";
@@ -207,7 +207,7 @@ function LoadAllInformation(index){
     if(typeof img1 === "string" && img1.length !== 0 && img1 !== null){
         img1EL.style.display = "block";
         section1.style.display = "flex";
-        img1EL.src = img1;
+        img1EL.src = "../" + img1;
     }
     else{
         img1EL.style.display = "none";
@@ -239,7 +239,7 @@ function LoadAllInformation(index){
     if(typeof img2 === "string" && img2.length !== 0 && img2 !== null){
         img2EL.style.display = "block";
         section2.style.display = "flex";
-        img2EL.src = img2;
+        img2EL.src = "../" + img2;
     }
     else{
         img2EL.style.display = "none";
@@ -271,7 +271,7 @@ function LoadAllInformation(index){
     if(typeof img3 === "string" && img3.length !== 0 && img3 !== null){
         img3EL.style.display = "block";
         section3.style.display = "flex";
-        img3EL.src = img3;
+        img3EL.src = "../" + img3;
     }
     else{
         img3EL.style.display = "none";
@@ -503,7 +503,7 @@ function SwapAboutMe(){
     }
     else{
         document.getElementById("swapAboutMeText").innerHTML = "View my work experience";
-        document.getEdlementById("aboutMeContainer").style.flexDirection = "column";
+        document.getElementById("aboutMeContainer").style.flexDirection = "column";
         document.getElementById("workExperienceContainer").classList.add("HideAboutMe");
         document.getElementById("skillsContainer").classList.add("ShowAboutMe");
         document.getElementById("skillsContainer").classList.remove("HideAboutMe");
