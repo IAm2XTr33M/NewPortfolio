@@ -401,7 +401,7 @@ function CreateProject(title, description, imageUrl, rating, date, index, titleH
     projectDescription.textContent = description;
 
     if (imageUrl) {
-        projectImgDiv.style.backgroundImage = "url('" + imageUrl + "')";
+        projectImgDiv.style.backgroundImage = "url('../" + imageUrl + "')";
     }
 
     if(index == 0){
