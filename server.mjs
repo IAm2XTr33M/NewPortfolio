@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const upload = multer({ dest: 'uploads/' });
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 emailjs.init({
     publicKey: 'tw6p-iFyiyWPoKxGl',
     blockHeadless: true,
@@ -48,6 +48,7 @@ app.post('/submit', upload.single('fileFieldName'), (req, res) => {
         phone_number : cleanPhone,
         message : cleanMessage,
     }
+    console.log(params.from_name + " tried sending you an email");
 
     emailjs.send('service_0i0u84s', 'template_jnggw6k', params ).then(
         (response) => {
