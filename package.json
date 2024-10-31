@@ -2,6 +2,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emailjs/nodejs": "^5.0.2",
+    "axios": "^1.7.7",
     "dompurify": "^3.1.7",
     "emailjs": "^4.0.3",
     "express": "^4.21.1",
