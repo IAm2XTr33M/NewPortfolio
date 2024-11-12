@@ -274,6 +274,7 @@ body{
 }
 
 #aboutMeContainer{
+    padding-top: 2%;
     height: 76%;
     width: 90%;
 }
@@ -497,7 +498,7 @@ body{
 .skillLeft h2{
     width: 100%;
     text-align: right;
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
 
 
