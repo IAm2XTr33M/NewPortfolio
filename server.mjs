@@ -74,7 +74,7 @@ const interval = 60000; //1 min - 60 sec
 function reloadWebsite() {
   axios.get(url)
     .then(response => {
-      console.log(`Reloaded at ${new Date().toISOString()}: Status Code ${response.status}`);
+      console.log(`Reloaded   at ${new Date().toISOString()}: Status Code ${response.status}`);
     })
     .catch(error => {
       console.error(`Error reloading at ${new Date().toISOString()}:`, error.message);

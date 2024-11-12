@@ -1,7 +1,7 @@
-const sentence = "Kyan mensen portfolio";
-const repeat = 8;
-const letterSpacing = 200;
-const sentenceSpacing = 4;
+const sentence = "Kyan mensen portfolio   -   Software Developer   -";
+const repeat = 4;
+const letterSpacing = 188;
+const sentenceSpacing = 3;
 
 
 document.addEventListener('DOMContentLoaded', function () {

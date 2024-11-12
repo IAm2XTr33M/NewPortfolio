@@ -186,34 +186,46 @@
                             <h2 class="socialLink">https://github.com/IAm2XTr33M/</h2>
                         </div>
                     </div>
-                    <div class="ImportantSocialDiv" style="--socialColor:#3B579D" onclick="OpenPage('https://www.facebook.com/kyanm2004/')">
+                    <!-- <div class="ImportantSocialDiv" style="--socialColor:#3B579D" onclick="OpenPage('https://www.facebook.com/kyanm2004/')">
                         <img src="img/Facebook.png" alt="">
                         <div>
                             <h2 class="socialName">Facebook</h2>
                             <h2 class="socialUserName">Kyanm2004</h2>
                             <h2 class="socialLink">https://www.facebook.com/kyanm2004/</h2>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-                <div id="page4Content" class="center-c" style="display: none; transform: translateX(100vw);">
-                     <h2 id="contactHeader">Get in contact!</h2>
-                     <br>
-                     
-                     <form action="/submit" method="post" id="contactForm">
-                        <input required name="name" type="text" placeholder="Your Name">
-                        <input required name="email" type="email" placeholder="Your Email">
-                        <input  name="phone" type="text" placeholder="Your Phone Number">
-                        <textarea required name="message" id="" placeholder="Your message \n \n Name, Email and Message are required"></textarea>
-                        <button type="submit">send</button>
-                     </form>
+                <div id="page4Content" style="display: none; transform: translateX(100vw);">
+                    <div id="content4left">
+                        <h2>Let's get in contact!</h2>
+                        <p>
+                            <br>
+                            Thanks for visiting my portfolio! Whether you have a project in mind, need some help bringing your idea to life, or just want to say hello, I’d love to hear from you. Fill out the form below, and I’ll get back to you as soon as possible.
+                            <br>
+                            <br>
+                            If you have specific goals or technical requirements, feel free to include those in your message so we can hit the ground running. I look forward to connecting and exploring how we can make your vision a reality.
+                            <br>
+                            <br>
+                            <span>Send me an email Now!</span>
+                        </p>
+                    </div>
+                    <div id="content4right">
+                        <form action="/submit" method="post" id="contactForm">
+                            <input required name="name" type="text" placeholder="Your Name">
+                            <input required name="email" type="email" placeholder="Your Email">
+                            <input  name="phone" type="text" placeholder="Your Phone Number">
+                            <textarea required name="message" id="" placeholder="\n Your message \n \n Name, Email and Message are required"></textarea>
+                            <button type="submit">send</button>
+                        </form>
 
-                     <script>
-                        var textAreas = document.getElementsByTagName('textarea');
+                        <script>
+                            var textAreas = document.getElementsByTagName('textarea');
 
-                        Array.prototype.forEach.call(textAreas, function(elem) {
-                            elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
-                        });
-                     </script>
+                            Array.prototype.forEach.call(textAreas, function(elem) {
+                                elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+                            });
+                        </script>
+                    </div>
                 </div>
             </div>
             <div class="contentEndLine"></div>
@@ -254,7 +266,7 @@
                                 <div class="projectImg"></div>
                                 <div class="projectInf">
                                     <h2>ProjectName</h2>
-                                    <div class="projectDescCenter">
+                                    <div class="projectDesc">
                                         <h3>this is a small project description</h3>
                                     </div>
                                 </div>
