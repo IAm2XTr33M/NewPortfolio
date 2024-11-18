@@ -1,6 +1,6 @@
-var devMode = true;
+var devMode = false;
 var devStartingPage = 4;
-
+ 
 
 document.addEventListener('DOMContentLoaded', () => {
     const letters = document.querySelectorAll('.letter');
