@@ -1023,15 +1023,15 @@ h2{
     height: 100%;
     text-align: start;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     padding-left: 10%;
     padding-right: 5%;
 }
 #content4left h2{
     width: 100%;
-    font-size: 2vw;
+    font-size: 2.1vw;
     color: var(--highlight);
 }
 
@@ -1039,10 +1039,11 @@ h2{
     color: white;
     font-family: monsterrat;
     line-height: 135%;
-    font-size: 1vw;
+    font-size: 1.1vw;
 }
 #content4left p span{
     color: var(--highlight);
+    font-size: 1.4vw;
 }
 
 
@@ -1069,6 +1070,13 @@ h2{
     width: 100%;
     height: 80%;
     gap: 5%;
+}
+
+#contactForm h3{
+    line-height: 0%;
+    font-size: 0.8vw;
+    font-family: monsterrat;
+    color: rgba(255, 255, 255, 0.35);
 }
 
 #contactForm input{

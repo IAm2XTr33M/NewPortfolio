@@ -1,4 +1,4 @@
-var devMode = false;
+var devMode = true;
 var devStartingPage = 4;
 
 
