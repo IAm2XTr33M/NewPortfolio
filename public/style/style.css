@@ -274,6 +274,7 @@ body{
 }
 
 #aboutMeContainer{
+    padding-top: 2%;
     height: 76%;
     width: 90%;
 }
@@ -497,7 +498,7 @@ body{
 .skillLeft h2{
     width: 100%;
     text-align: right;
-    font-size: 2vw;
+    font-size: 1.8vw;
 }
 
 
@@ -737,12 +738,25 @@ h2{
     text-align: center;
 }
 
-.projectLargeItems .projectDescCenter{
+.projectLargeItems .projectDesc{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 60%;
 }
+
+.projectLargeItems .projectDesc h3{
+    text-align: left !important;
+    padding-left: 0.3vw;
+    padding-right: 0.3vw;
+}
+
+.projectLargeItems  .selected h3{
+    text-align: center;
+    padding-left: 0.15vw;
+    padding-right: 0.15vw;
+}
+
 .projectSmallItems .project{
     display: flex;
     text-align: center;
@@ -776,6 +790,9 @@ h2{
     padding-top: 2%;
     padding-bottom: 2%;
     /* outline: yellow solid 1px; */
+    
+    line-height: 185%;
+    
     overflow-y: scroll;
     overflow-x: hidden;
     background-color: rgba(0, 0, 0, 0.25);
@@ -880,7 +897,7 @@ h2{
 #page3Content{
     width: 100%;
     height: 100%;
-    gap: 5%;
+    gap: 10%;
 }
 
 .ImportantSocialDiv{
@@ -1001,7 +1018,47 @@ h2{
 }
 
 
+#content4left{
+    width: 50%;
+    height: 100%;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 5%;
+}
+#content4left h2{
+    width: 100%;
+    font-size: 2.1vw;
+    color: var(--highlight);
+}
+
+#content4left p{
+    color: white;
+    font-family: monsterrat;
+    line-height: 135%;
+    font-size: 1.1vw;
+}
+#content4left p span{
+    color: var(--highlight);
+    font-size: 1.4vw;
+}
+
+
+#content4right{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 #contactHeader{
+    width: 100%;
+    text-align: center;
     font-size: 2vw;
     color: var(--highlight);
 }
@@ -1009,15 +1066,21 @@ h2{
 #contactForm{
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     width: 100%;
     height: 80%;
     gap: 5%;
 }
 
+#contactForm h3{
+    line-height: 0%;
+    font-size: 0.8vw;
+    font-family: monsterrat;
+    color: rgba(255, 255, 255, 0.35);
+}
+
 #contactForm input{
-    width: 40%;
+    width: 100%;
     text-align: center;
     background-color: transparent;
     border: var(--highlight) solid 0.2vw;
@@ -1028,7 +1091,7 @@ h2{
     font-size: 1.2vw;
 }
 #contactForm textarea{
-    width: 60%;
+    width: 100%;
     text-align: center;
     background-color: transparent;
     border: var(--highlight) solid 0.2vw;
@@ -1037,11 +1100,11 @@ h2{
     color: white;
     font-family: monsterrat;
     font-size: 1.1vw;
-    max-width: 90%;    
+    max-width: 100%;    
     min-height: 10%;    
 }
 #contactForm button{
-    width: 20%;
+    width: 100%;
     background-color: transparent;
     border: var(--highlight) solid 0.2vw;
     border-radius: 20px;
@@ -1051,7 +1114,7 @@ h2{
     font-size: 1.5vw;
 }
 #contactForm button:hover{
-    width: 25%;
+    width: 100%;
     border: var(--highlight) solid 0.2vw;
     border-radius: 23px;
     color: var(--highlight);
